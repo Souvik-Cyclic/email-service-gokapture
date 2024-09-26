@@ -13,7 +13,7 @@ export class SnsController {
     @Post('subscribe')
     async handleSns(@Req() req: any, @Res() res: any) {
         const snsMessageType = req.headers['x-amz-sns-message-type'];
-        console.log(req.body);
+        // console.log(req.body);
 
         if (snsMessageType === 'SubscriptionConfirmation') {
             const parsedBody = req.body;
