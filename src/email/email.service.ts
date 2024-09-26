@@ -68,12 +68,12 @@ export class EmailService {
                 console.log(`Email sent successfully to ${recipient}`);
                 responseIds.push(response.$metadata.requestId);
 
-                await this.trackEmail(recipient, 'Sent');
+                // await this.trackEmail(recipient, 'Sent');
             } catch (error) {
                 console.error(`Error sending email to ${recipient}:`, error);
                 errors.push(`Failed to send email to ${recipient}: ${error.message}`);
 
-                await this.trackEmail(recipient, 'Bounced');
+                // await this.trackEmail(recipient, 'Bounced');
             }
         }
 
