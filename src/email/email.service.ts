@@ -97,5 +97,7 @@ export class EmailService {
         await this.trackEmail(email, 'Bounced');
     }
 
-
+    async getAllEmailTracking(): Promise<EmailTracking[]> {
+        return await this.emailTrackingRepository.find();
+    }
 }

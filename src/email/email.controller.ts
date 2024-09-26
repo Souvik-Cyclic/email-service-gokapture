@@ -1,5 +1,6 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { EmailService } from './email.service';
+import { EmailTracking } from './schema/email.entity';
 
 @Controller('email')
 export class EmailController {
@@ -24,5 +25,10 @@ export class EmailController {
                 errors: [error.message],
             }
         }
+    }
+
+    @Get('all')
+    async getAllEmailTracking(): Promise<EmailTracking[]> {
+        return this.emailService.getAllEmailTracking();
     }
 }
